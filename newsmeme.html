@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MEMEVERSELABS - NEWS</title>
+  <style>
+    /* Salin seluruh CSS dari halaman sebelumnya */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #000000, #0a0a0a);
+      color: white;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    canvas#stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    header,
+    section,
+    footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    a {
+      transition: all 0.3s ease;
+    }
+
+    a:hover {
+      color: #ffffff;
+      text-shadow: 0 0 10px #00ff99;
+    }
+
+    header {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10, 10, 20, 0.9);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(5px);
+    }
+
+    nav a {
+      margin: 0 12px;
+      color: #00ff99;
+      text-decoration: none;
+      font-weight: bold;
+      position: relative;
+    }
+
+    nav a::after {
+      content: '';
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: #00ff99;
+      transition: width 0.3s ease;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px 80px;
+      animation: fadeInUp 2s ease-out forwards;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      color: #00ff99;
+      text-shadow: 0 0 20px #00ff99;
+    }
+
+    .hero h3 {
+      font-size: 1.5rem;
+      margin-top: 10px;
+      color: #ccc;
+    }
+
+    .news {
+      padding: 60px 20px;
+      max-width: 1000px;
+      margin: auto;
+      text-align: center;
+    }
+
+    .news h2 {
+      color: #00ff99;
+      margin-bottom: 20px;
+      font-size: 2.2rem;
+    }
+
+    .news-item {
+      background: #1f1f2f;
+      border: 1px solid #00ff99;
+      border-radius: 16px;
+      margin: 20px 0;
+      padding: 20px;
+      text-align: left;
+      box-shadow: 0 0 20px #00ff9970;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .news-item:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 0 30px #00ff99aa;
+    }
+
+    .news-item h3 {
+      color: #00ff99;
+      font-size: 1.6rem;
+      margin-bottom: 10px;
+    }
+
+    .news-item p {
+      color: #ccc;
+      margin-bottom: 15px;
+      font-size: 1rem;
+      line-height: 1.5;
+    }
+
+    footer {
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    footer a {
+      margin: 0 10px;
+      color: #00ff99;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer h2 {
+      margin-top: 20px;
+      font-style: italic;
+      font-size: 1.2rem;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      nav {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Stars Background -->
+  <canvas id="stars"></canvas>
+
+  <!-- Header -->
+  <header>
+    <div><strong>$MEMEVERSELABS</strong></div>
+    <nav>
+      <a href="memevr.html">HOME</a>
+      <a href="modul.html">MODUL</a>
+      <a href="pagecomun.html">COMMUNITY</a>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h1>NEWS MEMEVERSELABS</h1>
+    <h3>Update Pasar Crypto & Tren Global Meme</h3>
+  </section>
+
+  <!-- News Section -->
+  <section class="news" id="news">
+    <h2>BERITA TERKINI</h2>
+
+    <!-- News Item 1 -->
+    <div class="news-item">
+      <h3>Bitcoin Melampaui $100K! Bertanda Bull Run Baru?</h3>
+      <p>Bitcoin (BTC) mencapai angka $100.000 untuk pertama kalinya sejak tahun 2021, menimbulkan spekulasi bahwa pasar crypto mungkin sedang berada dalam fase bull run baru. Dengan adopsi institusional yang terus meningkat dan sentimen pasar yang positif, BTC terlihat semakin berpeluang untuk mempertahankan harga tersebut.</p>
+      <p><strong>Update:</strong> Para analis mengamati bahwa jika BTC dapat mempertahankan level ini dalam waktu dekat, itu akan menjadi tanda kuat untuk aliran investasi jangka panjang.</p>
+    </div>
+
+    <!-- News Item 2 -->
+    <div class="news-item">
+      <h3>Ethereum 2.0: Terbaru dari Pembaruan Besar Ethereum?</h3>
+      <p>Ethereum 2.0 terus berkembang dengan implementasi Proof of Stake (PoS) yang lebih luas. Pembaruan ini menjanjikan untuk meningkatkan kecepatan transaksi serta mengurangi konsumsi energi. Namun, beberapa pihak masih khawatir mengenai transisi yang dapat memengaruhi pasar ETH dalam jangka pendek.</p>
+      <p><strong>Fakta:</strong> Ethereum telah menjadi platform smart contract terdepan dengan lebih dari 300.000 dApps yang berjalan di blockchain-nya.</p>
+    </div>
+
+    <!-- News Item 3 -->
+    <div class="news-item">
+      <h3>Regulasi Crypto Global: Bagaimana Negara-Negara Memposisikan Diri?</h3>
+      <p>Berbagai negara mulai mengeluarkan regulasi yang lebih ketat terhadap pasar crypto. Negara-negara seperti China dan India lebih menekan penggunaan crypto, sementara AS dan beberapa negara Eropa cenderung mendukungnya. Pertanyaannya adalah, bagaimana pengaruh regulasi ini terhadap harga crypto di masa depan?</p>
+      <p><strong>Update:</strong> Sumber mengatakan bahwa peraturan yang lebih jelas dapat membantu mendorong adopsi crypto lebih luas dalam sistem keuangan global.</p>
+    </div>
+
+    <!-- News Item 4 -->
+    <div class="news-item">
+      <h3>Proyek DeFi Terbesar Mengalami Serangan Keamanan</h3>
+      <p>Platform DeFi (Decentralized Finance) terbesar mengalami serangan keamanan yang mengakibatkan kerugian hingga jutaan dolar. Serangan ini menyoroti kerentanannya terhadap peretasan, meskipun teknologi blockchain dikenal dengan keamanan tinggi.</p>
+      <p><strong>Peringatan:</strong> Pengguna DeFi disarankan untuk selalu memverifikasi platform sebelum menginvestasikan dana mereka.</p>
+    </div>
+
+    <!-- News Item 5 -->
+    <div class="news-item">
+      <h3>Polkadot Luncurkan Fitur Baru Interoperabilitas Blockchain</h3>
+      <p>Polkadot meluncurkan fitur baru yang memungkinkan interoperability antara berbagai blockchain, memperluas kemampuan DeFi dan aplikasi berbasis blockchain lainnya. Hal ini diharapkan akan meningkatkan efisiensi dan mempermudah transaksi lintas blockchain di seluruh dunia.</p>
+      <p><strong>Highlight:</strong> Fitur baru ini memegang potensi besar dalam meningkatkan masa depan blockchain multi-chain.</p>
+    </div>
+
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div>
+      <a href="https://t.me/CloudyKitchen" target="_blank">TELEGRAM</a>
+      <a href="https://x.com/clxsol" target="_blank">X (TWITTER)</a>
+      <a href="https://www.instagram.com" target="_blank">INSTAGRAM</a>
+    </div>
+    <h2>© 2025 MEMEVERSELABS - All Rights Reserved</h2>
+  </footer>
+
+  <script>
+    // Animasi bintang untuk latar belakang
+    const canvas = document.getElementById('stars');
+    const ctx = canvas.getContext('2d');
+    const stars = [];
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    // Membuat bintang
+    function createStar() {
+      let x = Math.random() * canvas.width;
+      let y = Math.random() * canvas.height;
+      let speed = Math.random() * 0.5 + 0.5;
+      let radius = Math.random() * 1.2 + 0.2;
+      stars.push({ x, y, speed, radius });
+    }
+
+    // Update bintang
+    function updateStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      stars.forEach(star => {
+        star.y += star.speed;
+        if (star.y > canvas.height) {
+          star.y = 0;
+        }
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(0, 255, 153, 0.8)';
+        ctx.fill();
+      });
+
+      requestAnimationFrame(updateStars);
+    }
+
+    // Menghasilkan banyak bintang
+    for (let i = 0; i < 150; i++) {
+      createStar();
+    }
+
+    updateStars();
+  </script>
+</body>
+
+</html>

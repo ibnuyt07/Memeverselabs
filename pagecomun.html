@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MEMEVERSELABS - COMMUNITY</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Arial:400,700&display=swap">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      background: linear-gradient(to bottom, #000000, #0a0a0a);
+      color: white;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    canvas#stars {
+      position: fixed;
+      top: 0;
+      left: 0;
+      z-index: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    header,
+    section,
+    footer {
+      position: relative;
+      z-index: 1;
+    }
+
+    header {
+      padding: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: rgba(10, 10, 20, 0.9);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(5px);
+    }
+
+    nav a {
+      margin: 0 12px;
+      color: #00ff99;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-shadow: 0 0 10px #00ff99;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 100px 20px 60px;
+      animation: fadeInUp 2s ease-out forwards;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #00ff99;
+      text-shadow: 0 0 20px #00ff99;
+    }
+
+    .hero h3 {
+      font-size: 1.5rem;
+      color: #ccc;
+    }
+
+    section.content {
+      max-width: 1000px;
+      margin: auto;
+      padding: 60px 20px;
+      text-align: center;
+    }
+
+    section.content h2 {
+      font-size: 2rem;
+      color: #00ff99;
+      margin-bottom: 20px;
+    }
+
+    .gallery {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      justify-content: center;
+      margin-top: 30px;
+    }
+
+    .gallery img {
+      width: 240px;
+      height: 160px;
+      object-fit: cover;
+      border-radius: 12px;
+      box-shadow: 0 0 15px #00ff9960;
+      transition: transform 0.3s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 20px #00ff99;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    footer {
+      padding: 30px 20px;
+      text-align: center;
+    }
+
+    footer a {
+      margin: 0 10px;
+      color: #00ff99;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    footer h2 {
+      margin-top: 20px;
+      font-style: italic;
+      font-size: 1.2rem;
+    }
+  </style>
+</head>
+
+<body>
+  <canvas id="stars"></canvas>
+
+  <header>
+    <div><strong>$MEMEVERSELABS</strong></div>
+    <nav>
+      <a href="memevr.html">HOME</a>
+      <a href="modul.html">E-BOOK</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>COMMUNITY</h1>
+    <h3>Tempat Degen Bertumbuh & Saling Support</h3>
+  </section>
+
+  <section class="content">
+    <h2>MENGENAL KOMUNITAS KAMI</h2>
+    <p>MemeVerseLabs bukan sekadar komunitas biasa. Ini adalah ruang berkumpulnya para degen, meme enthusiast, dan alpha hunter yang tidak hanya mencari cuan, tapi juga koneksi dan kekuatan kolektif. Di sini, kamu bisa belajar, berbagi alpha, dan bahkan membangun proyek bareng komunitas. Setiap anggota punya peluang untuk bersinar dan memberi kontribusi nyata.</p>
+    <p>Kami menyambut yang berani, kreatif, dan siap gas bareng. Komunitas ini bergerak cepat, berisik, dan penuh energi. Kalau kamu suka dengan chaos terstruktur yang penuh peluang — welcome home.</p>
+
+    <div id="gallery" class="gallery">
+      <img src="asset/razor.png"
+      alt="Komunitas 1">
+      <img src="asset/aura.jpg"
+      alt="Komunitas 2">
+      <img src="asset/pepe.jpg" 
+      alt="Komunitas 3">
+    </div>
+  </section>
+
+  <footer>
+    <div>
+      <a href="https://t.me/CloudyKitchen" target="_blank">TELEGRAM</a>
+      <a href="https://x.com/clxsol" target="_blank">X (TWITTER)</a>
+      <a href="https://www.instagram.com/memeverse_labs" target="_blank">INSTAGRAM</a>
+    </div>
+    <h2>"In Meme We Trust."</h2>
+  </footer>
+
+  <script>
+    const canvas = document.getElementById("stars");
+    const ctx = canvas.getContext("2d");
+    let stars = [];
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    for (let i = 0; i < 200; i++) {
+      stars.push({
+        x: Math.random() * canvas.width,
+        y: Math.random() * canvas.height,
+        radius: Math.random() * 1.2,
+        speed: Math.random() * 0.5 + 0.2
+      });
+    }
+
+    function drawStars() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.fillStyle = "#00ff99";
+      stars.forEach(star => {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.radius, 0, Math.PI * 2);
+        ctx.fill();
+        star.y += star.speed;
+        if (star.y > canvas.height) {
+          star.y = 0;
+          star.x = Math.random() * canvas.width;
+        }
+      });
+      requestAnimationFrame(drawStars);
+    }
+    drawStars();
+  </script>
+</body>
+
+</html>
